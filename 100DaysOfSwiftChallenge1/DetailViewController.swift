@@ -20,6 +20,23 @@ class DetailViewController: UIViewController {
         
         if let imageToLoad = imageName {
             flagView.image = UIImage(named: imageToLoad)
-        }        
+        }
+        
+        navigationItem.rightBarButtonItem  = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharedTapped))
+        
     }
+    
+    @objc func sharedTapped() {
+     guard let image = flagView.image else {
+         print("Image not found")
+         return
+     }
+        
+        let ac = UIActivityViewController(activityItems: [image, countryName], applicationActivities: [])
+        
+        ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(ac, animated: true)
+        
+    }
+    
 }
