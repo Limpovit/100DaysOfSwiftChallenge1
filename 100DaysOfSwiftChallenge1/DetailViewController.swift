@@ -9,22 +9,17 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var flagView: UIImageView!
+    
+    var imageName: String?
+    var countryName: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = countryName
+        
+        if let imageToLoad = imageName {
+            flagView.image = UIImage(named: imageToLoad)
+        }        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
