@@ -11,17 +11,30 @@
         <scene sceneID="q7B-aq-vLP">
             <objects>
                 <tableViewController id="Xr1-gv-r1k" customClass="TableViewController" customModule="_00DaysOfSwiftChallenge1" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HIV-6K-Yb4" customClass="ViewC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="HIV-6K-Yb4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="dWL-Im-WIo">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="rcC-1G-rJu" imageView="53J-jY-rUZ" style="IBUITableViewCellStyleDefault" id="dWL-Im-WIo">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dWL-Im-WIo" id="WGP-tA-6Yz">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rcC-1G-rJu">
+                                            <rect key="frame" x="122" y="0.0" width="272" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="flags_germany" id="53J-jY-rUZ">
+                                            <rect key="frame" x="20" y="0.0" width="87" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -44,14 +57,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flags_spain" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-GM-5ac">
-                                <rect key="frame" x="87" y="81" width="240" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flags_spain" translatesAutoresizingMaskIntoConstraints="NO" id="Ans-GM-5ac">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ans-GM-5ac" firstAttribute="leading" secondItem="ig3-HM-sLy" secondAttribute="leading" id="5j8-27-9G5"/>
+                            <constraint firstItem="ig3-HM-sLy" firstAttribute="trailing" secondItem="Ans-GM-5ac" secondAttribute="trailing" id="BQu-CI-pFN"/>
+                            <constraint firstItem="ig3-HM-sLy" firstAttribute="top" secondItem="Ans-GM-5ac" secondAttribute="top" constant="44" id="Jra-KV-xBY"/>
+                            <constraint firstItem="Ans-GM-5ac" firstAttribute="bottom" secondItem="ig3-HM-sLy" secondAttribute="bottom" constant="34" id="NZw-BU-Sip"/>
+                            <constraint firstItem="Ans-GM-5ac" firstAttribute="leading" secondItem="ig3-HM-sLy" secondAttribute="leading" id="o4k-fi-zuu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ig3-HM-sLy"/>
                     </view>
+                    <connections>
+                        <outlet property="flagView" destination="Ans-GM-5ac" id="9w6-bt-4QG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr1-PH-hpX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,6 +99,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="flags_germany" width="200" height="100"/>
         <image name="flags_spain" width="200" height="100"/>
     </resources>
 </document>
