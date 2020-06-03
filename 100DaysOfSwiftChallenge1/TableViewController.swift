@@ -28,7 +28,36 @@ class TableViewController: UITableViewController {
             }
         }
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return flags.count
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "Detail") as? DetailViewController {
+            vc.imageName = flags[indexPath.row]
+            vc.countryName = countries[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-
+        
+        cell.textLabel?.text = countries[indexPath.row]
+        
+        return cell
+    }
+    
+    func getCountryName(item: String) -> String {
+        let firstIndex = item.index(after: item.firstIndex(of: "-")!)
+        let lastIndex = item.firstIndex(of: ".")!
+        let countryName = item[firstIndex..<lastIndex]
+        
+        return countryName.capitalized
+        
+    }
+    
 }
 
