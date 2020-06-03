@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = countryName
+        navigationItem.largeTitleDisplayMode = .never
         
         if let imageToLoad = imageName {
             flagView.image = UIImage(named: imageToLoad)
@@ -32,7 +33,7 @@ class DetailViewController: UIViewController {
          return
      }
         
-        let ac = UIActivityViewController(activityItems: [image, countryName], applicationActivities: [])
+        let ac = UIActivityViewController(activityItems: [image, countryName ?? "Name"], applicationActivities: [])
         
         ac.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
         present(ac, animated: true)

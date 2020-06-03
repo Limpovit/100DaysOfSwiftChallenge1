@@ -17,6 +17,10 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Countries flags"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         let items = try! fm.contentsOfDirectory(atPath: path)
@@ -46,7 +50,7 @@ class TableViewController: UITableViewController {
 
         
         cell.textLabel?.text = countries[indexPath.row]
-        
+        cell.imageView?.image = UIImage(named: flags[indexPath.row])
         return cell
     }
     
