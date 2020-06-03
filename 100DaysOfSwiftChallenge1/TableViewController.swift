@@ -9,10 +9,24 @@
 import UIKit
 
 class TableViewController: UITableViewController {
-
+    
+    var flags = [String]()
+    var countries = [String]()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+        let items = try! fm.contentsOfDirectory(atPath: path)
+        
+        for item in items {
+            if item.hasPrefix("flags_") {
+                flags.append(item)
+                countries.append(getCountryName(item: item))
+            }
+        }
     }
 
 
